@@ -39,7 +39,7 @@ char* strip(char* str) {
   // Allocate a slot for all the "saved" characters
   // plus one extra for the null terminator.
   result = calloc(size-num_spaces+1, sizeof(char));
-  // Copy in the "saved" characters.
+ 
   for (i=first_non_space; i<=last_non_space; ++i) {
     result[i-first_non_space] = str[i];
   }
@@ -67,6 +67,9 @@ int is_clean(char* str) {
   // greater than the second.
   result = strcmp(str, cleaned);
 
+  if(cleaned[0] != '\0'){
+	  free(cleaned);
+  }
   return result == 0;
 }
 
