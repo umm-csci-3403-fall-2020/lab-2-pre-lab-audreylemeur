@@ -1,3 +1,5 @@
 # Leak report
 
-_Use this document to describe whatever memory leaks you find in `clean_whitespace.c` and how you might fix them. You should also probably remove this explanatory text._
+Memory leaks happen because memory is allocated incorrectly or the memory is allocated then forgotten about.
+The memory leak here was caused because the allocated memory was not freed after being used.
+To fix the leak, we needed to use the "free" method to free up the memory allocated for the string.
